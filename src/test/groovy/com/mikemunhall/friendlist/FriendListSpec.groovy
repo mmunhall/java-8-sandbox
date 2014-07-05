@@ -31,6 +31,16 @@ class FriendListSpec extends Specification {
             mikeFriends.forEachWithLambda() == ["Dorrie", "Chris", "Alex", "Nate"];
     }
 
+    def "forEachWithLambdaTypeInference() removes the parens and the type on the arguments to the lambda expression"() {
+        expect:
+            mikeFriends.forEachWithLambdaTypeInference() == ["Dorrie", "Chris", "Alex", "Nate"];
+    }
+
+    def "forEachWithLambdaMethodReference() uses a method reference"() {
+        expect:
+            mikeFriends.forEachWithLambdaMethodReference() == ["Dorrie", "Chris", "Alex", "Nate"];
+    }
+
     def "toUpperCase() returns a list with each name capitalized."() {
         expect:
             mikeFriends.toUpperCase() == ["DORRIE", "CHRIS", "ALEX", "NATE"]

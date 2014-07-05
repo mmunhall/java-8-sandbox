@@ -66,6 +66,25 @@ class FriendList {
         return out;
     }
 
+    /*
+        Types can be inferred (but you cannot declare as final), and you can
+        remove the parentheses
+    */
+    public List<String> forEachWithLambdaTypeInference() {
+        List<String> out = new ArrayList<String>();
+        friends.forEach(name -> out.add(name));
+        return out;
+    }
+
+    /*
+        Methods can be referenced in a lambda expression. This is possible only
+        for cases when the argument and the result need no modification.
+    */
+    public List<String> forEachWithLambdaMethodReference() {
+        List<String> out = new ArrayList<String>();
+        friends.forEach(out::add);
+        return out;
+    }
 
     public List<String> toUpperCase() {
         return friends.stream()
@@ -74,11 +93,6 @@ class FriendList {
     }
 
     /*public static void main(String[] args) {
-
-
-        System.out.println("Types can be inferred (but you cannot declare as final):");
-        friends.forEach(name -> System.out.println(name));
-        System.out.println("");
 
         System.out.println("Methods can be referenced:");
         friends.forEach(System.out::println);

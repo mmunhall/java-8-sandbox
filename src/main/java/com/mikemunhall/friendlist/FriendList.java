@@ -43,6 +43,19 @@ class FriendList {
         return out;
     }
 
+    /*
+        Foreach with anonymous inner class of type Consumer (new in Java 8)
+    */
+    public List<String> forEachWithAnonymousInnerClass() {
+        List<String> out = new ArrayList<String>();
+        friends.forEach(new Consumer<String>() {
+            public void accept(final String name) {
+                out.add(name);
+            }
+        });
+        return out;
+    }
+
     public List<String> toUpperCase() {
         return friends.stream()
             .map(name -> name.toUpperCase())

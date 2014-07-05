@@ -18,6 +18,20 @@ class FriendList {
         return friends;
     }
 
+    /*
+        The old school, imperative way. Why it's not optimal:
+            1) Sequential, difficult to parellelize,
+            2) Non-polymorphic, you get what you ask for,
+            3) Verbose, violates \"Tell, don't ask.\" principle.
+    */
+    public List<String> iterateOldSchool() {
+        List<String> out = new ArrayList<String>();
+        for (int i=0; i<friends.size(); i++) {
+            out.add(friends.get(i));
+        }
+        return out;
+    }
+
     public List<String> toUpperCase() {
         return friends.stream()
             .map(name -> name.toUpperCase())

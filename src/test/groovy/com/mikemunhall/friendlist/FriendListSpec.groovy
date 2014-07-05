@@ -7,7 +7,12 @@ class FriendListSpec extends Specification {
 
     def mikeFriends = new FriendList(["Dorrie", "Chris", "Alex", "Nate"]);
 
-    def "sample"() {
+    def "iterateOldSchool() works, but is no longer the best way."() {
+        expect:
+            mikeFriends.iterateOldSchool() == ["Dorrie", "Chris", "Alex", "Nate"];
+    }
+
+    def "toUpperCase() returns a list with each name capitalized."() {
         expect:
             mikeFriends.toUpperCase() == ["DORRIE", "CHRIS", "ALEX", "NATE"]
     }

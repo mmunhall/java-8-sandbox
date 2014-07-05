@@ -94,10 +94,6 @@ class FriendList {
 
     /*public static void main(String[] args) {
 
-        System.out.println("Methods can be referenced:");
-        friends.forEach(System.out::println);
-        System.out.println("");
-
         System.out.println("Imperative transformation:");
         for(String friend : friends) {
             uppercaseNames.add(friend.toUpperCase());

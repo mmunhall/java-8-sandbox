@@ -32,6 +32,17 @@ class FriendList {
         return out;
     }
 
+    /*
+        Still old school, slightly less imperative:
+    */
+    public List<String> iterateOldSchoolALittleBetter() {
+        List<String> out = new ArrayList<String>();
+        for(String name : friends) {
+            out.add(name);
+        }
+        return out;
+    }
+
     public List<String> toUpperCase() {
         return friends.stream()
             .map(name -> name.toUpperCase())
@@ -39,21 +50,9 @@ class FriendList {
     }
 
     /*public static void main(String[] args) {
-        System.out.println("Old School, imperative:");
-        System.out.println("Why it's not optimal:");
-        System.out.println("    1) Sequential, difficult to parellelize,");
-        System.out.println("    2) Non-polymorphic, you get what you ask for,");
-        System.out.println("    3) Verbose, violates \"Tell, don't ask.\" principle.");
-        for (int i=0; i<friends.size(); i++) {
-            System.out.println(friends.get(i));
-        }
-        System.out.println("");
 
-        System.out.println("Old School, slightly less imperative:");
-        for(String friend : friends) {
-            System.out.println(friend);
-        }
-        System.out.println("");
+
+
 
         System.out.println("Foreach, with anonymous inner class (new in Java 8):");
         friends.forEach(new Consumer<String>() {

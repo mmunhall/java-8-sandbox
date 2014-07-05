@@ -21,9 +21,15 @@ class FriendListSpec extends Specification {
             mikeFriends.iterateOldSchoolALittleBetter() == ["Dorrie", "Chris", "Alex", "Nate"];
     }
 
-    /*def "Foreach with anonymous inner class of type Consumer (new in Java 8)"() {
+    def "Foreach with anonymous inner class of type Consumer (new in Java 8)"() {
+        expect:
+            mikeFriends.iterateOldSchoolALittleBetter() == ["Dorrie", "Chris", "Alex", "Nate"];
+    }
 
-    }*/
+    def "forEachWithLambda() uses a lambda expression instead of the previous anonyomous inner class"() {
+        expect:
+            mikeFriends.forEachWithLambda() == ["Dorrie", "Chris", "Alex", "Nate"];
+    }
 
     def "toUpperCase() returns a list with each name capitalized."() {
         expect:

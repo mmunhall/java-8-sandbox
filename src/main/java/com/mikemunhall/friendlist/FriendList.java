@@ -56,6 +56,17 @@ class FriendList {
         return out;
     }
 
+    /*
+        Introducing Java 8 Lambdas. Replace the verbose anonyomous inner class
+        with a lambda. Ahhh... Getting better.
+    */
+    public List<String> forEachWithLambda() {
+        List<String> out = new ArrayList<String>();
+        friends.forEach((final String name) -> out.add(name));
+        return out;
+    }
+
+
     public List<String> toUpperCase() {
         return friends.stream()
             .map(name -> name.toUpperCase())
@@ -64,20 +75,6 @@ class FriendList {
 
     /*public static void main(String[] args) {
 
-
-
-
-        System.out.println("Foreach, with anonymous inner class (new in Java 8):");
-        friends.forEach(new Consumer<String>() {
-            public void accept(final String name) {
-                System.out.println(name);
-            }
-        });
-        System.out.println("");
-
-        System.out.println("Introducting Java 8 lambdas:");
-        friends.forEach((final String name) -> System.out.println(name));
-        System.out.println("");
 
         System.out.println("Types can be inferred (but you cannot declare as final):");
         friends.forEach(name -> System.out.println(name));

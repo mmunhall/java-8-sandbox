@@ -1,14 +1,14 @@
-package com.mikemunhall.friendlist
+package com.mikemunhall.functional
 
-import com.mikemunhall.friendlist.FriendList;
+import com.mikemunhall.functional.TransformElements;
 import spock.lang.Specification
 
-class FriendListTransformSpec extends Specification {
+class TransformElementsSpec extends Specification {
 
     def mikeFriends
 
     def setup() {
-        mikeFriends = new FriendList(["Dorrie", "Chris", "Alex", "Nate"]);
+        mikeFriends = new TransformElements(["Dorrie", "Chris", "Alex", "Nate"]);
     }
 
     def "imperative toUpperCase() returns a list with each name capitalized."() {

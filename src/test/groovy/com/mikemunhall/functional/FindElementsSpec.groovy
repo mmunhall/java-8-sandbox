@@ -1,14 +1,14 @@
-package com.mikemunhall.friendlist
+package com.mikemunhall.functional
 
-import com.mikemunhall.friendlist.FriendList;
+import com.mikemunhall.functional.FindElements;
 import spock.lang.Specification
 
-class FriendListFindSpec extends Specification {
+class FindElementsSpec extends Specification {
 
     def mikeFriends
 
     def setup() {
-        mikeFriends = new FriendList(["Dorrie", "Chris", "Alex", "Nate", "Chuck"]);
+        mikeFriends = new FindElements(["Dorrie", "Chris", "Alex", "Nate", "Chuck"]);
     }
 
     def "findStartsWith() returns names that start with specified character"() {

@@ -1,14 +1,14 @@
-package com.mikemunhall.friendlist
+package com.mikemunhall.functional
 
-import com.mikemunhall.friendlist.FriendList;
+import com.mikemunhall.functional.LambdaIntro;
 import spock.lang.Specification
 
-class FriendListIterationSpec extends Specification {
+class LambdaIntroSpec extends Specification {
 
     def mikeFriends
 
     def setup() {
-        mikeFriends = new FriendList(["Dorrie", "Chris", "Alex", "Nate"]);
+        mikeFriends = new LambdaIntro(["Dorrie", "Chris", "Alex", "Nate"]);
     }
 
     def "iterateOldSchool() works, but is no longer the best way."() {

@@ -1,4 +1,4 @@
-package com.mikemunhall.friendlist;
+package com.mikemunhall.functional;
 
 import java.util.List;
 import java.util.Arrays;
@@ -6,16 +6,12 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-class FriendList {
+class TransformElements {
 
     private List<String> friends;
 
-    public FriendList(List<String> friends) {
+    public TransformElements(List<String> friends) {
         this.friends = friends;
-    }
-
-    public List<String> getFriends() {
-        return friends;
     }
 
     /*

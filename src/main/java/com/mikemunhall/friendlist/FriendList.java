@@ -114,22 +114,4 @@ class FriendList {
             .map(name -> name.toUpperCase())
             .collect(Collectors.toList());
     }
-
-    // public List<String> toUpperCase() {
-    //     return friends.stream()
-    //         .map(name -> name.toUpperCase())
-    //         .collect(Collectors.toList());
-    // }
-
-    /*public static void main(String[] args) {
-
-
-System.out.println("Real functional programming, using Java 8's stream() and map():");
-        uppercaseNames.clear();
-        friends.stream()
-            .map(name -> name.toUpperCase())
-            .forEach(name -> System.out.print(name + " "));
-        System.out.println();
-    }
-    */
 }

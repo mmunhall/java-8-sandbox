@@ -123,4 +123,13 @@ class FriendList {
             .map(String::toUpperCase)
             .collect(Collectors.toList());
     }
+
+    /*
+        Returns a list of names beginning with specified character
+    */
+    public List<String> findStartsWith(String c) {
+        return friends.stream()
+            .filter(name -> name.startsWith(c))
+            .collect(Collectors.toList());
+    }
 }

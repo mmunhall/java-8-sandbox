@@ -22,7 +22,7 @@ class FriendList {
         The old school, imperative way. Why it's not optimal:
             1) Sequential, difficult to parellelize,
             2) Non-polymorphic, you get what you ask for,
-            3) Verbose, violates \"Tell, don't ask.\" principle.
+            3) Verbose, violates "Tell, don't ask." principle.
     */
     public List<String> iterateOldSchool() {
         List<String> out = new ArrayList<String>();

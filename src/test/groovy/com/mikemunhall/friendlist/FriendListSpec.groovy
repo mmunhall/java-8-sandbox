@@ -55,4 +55,9 @@ class FriendListSpec extends Specification {
         expect:
             mikeFriends.toUpperCaseFunctional() == ["DORRIE", "CHRIS", "ALEX", "NATE"]
     }
+
+    def "toUpperCaseFunctionalWithMethodReference is the preferred"() {
+        expect:
+            mikeFriends.toUpperCaseFunctionalWithMethodReference() == ["DORRIE", "CHRIS", "ALEX", "NATE"]
+    }
 }

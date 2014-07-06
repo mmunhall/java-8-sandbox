@@ -86,18 +86,26 @@ class FriendList {
         return out;
     }
 
+    /*
+        Old school, imperative tranformation
+    */
     public List<String> toUpperCase() {
-        return friends.stream()
-            .map(name -> name.toUpperCase())
-            .collect(Collectors.toList());
+        List<String> out = new ArrayList<String>();
+        for(String friend : friends) {
+            out.add(friend.toUpperCase());
+        }
+        return out;
     }
+
+    // public List<String> toUpperCase() {
+    //     return friends.stream()
+    //         .map(name -> name.toUpperCase())
+    //         .collect(Collectors.toList());
+    // }
 
     /*public static void main(String[] args) {
 
-        System.out.println("Imperative transformation:");
-        for(String friend : friends) {
-            uppercaseNames.add(friend.toUpperCase());
-        }
+        
 
         System.out.println("Slightly better, but still mostly imperative transformation:");
         uppercaseNames.clear();

@@ -41,7 +41,7 @@ class FriendListSpec extends Specification {
             mikeFriends.forEachWithLambdaMethodReference() == ["Dorrie", "Chris", "Alex", "Nate"];
     }
 
-    def "toUpperCase() returns a list with each name capitalized."() {
+    def "imperative toUpperCase() returns a list with each name capitalized."() {
         expect:
             mikeFriends.toUpperCase() == ["DORRIE", "CHRIS", "ALEX", "NATE"]
     }

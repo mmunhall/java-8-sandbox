@@ -45,4 +45,14 @@ class FriendListSpec extends Specification {
         expect:
             mikeFriends.toUpperCase() == ["DORRIE", "CHRIS", "ALEX", "NATE"]
     }
+
+    def "toUpperCaseLambda() uses a lambda, but it still mostly imperitive."() {
+        expect:
+            mikeFriends.toUpperCase() == ["DORRIE", "CHRIS", "ALEX", "NATE"]
+    }
+
+    def "toUpperCaseFunctional is the functional style we want"() {
+        expect:
+            mikeFriends.toUpperCaseFunctional() == ["DORRIE", "CHRIS", "ALEX", "NATE"]
+    }
 }

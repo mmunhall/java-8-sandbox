@@ -97,6 +97,24 @@ class FriendList {
         return out;
     }
 
+    /*
+        Sligthly better with the use of a lambda, but still imperative style.
+    */
+    public List<String> toUpperCaseLambda() {
+        List<String> out = new ArrayList<String>();
+        friends.forEach(name -> out.add(name.toUpperCase()));
+        return out;
+    }
+
+    /*
+        Real functional programming, using Java 8's stream() and map()
+    */
+    public List<String> toUpperCaseFunctional() {
+        return friends.stream()
+            .map(name -> name.toUpperCase())
+            .collect(Collectors.toList());
+    }
+
     // public List<String> toUpperCase() {
     //     return friends.stream()
     //         .map(name -> name.toUpperCase())
@@ -105,14 +123,8 @@ class FriendList {
 
     /*public static void main(String[] args) {
 
-        
 
-        System.out.println("Slightly better, but still mostly imperative transformation:");
-        uppercaseNames.clear();
-        friends.forEach(name -> uppercaseNames.add(name.toUpperCase()));
-        System.out.println(uppercaseNames);
-
-        System.out.println("Real functional programming, using Java 8's stream() and map():");
+System.out.println("Real functional programming, using Java 8's stream() and map():");
         uppercaseNames.clear();
         friends.stream()
             .map(name -> name.toUpperCase())

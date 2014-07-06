@@ -18,4 +18,9 @@ class LexicalScopingSpec extends Specification {
         expect:
             mikePeople.friendsStarWithNTheOldWay() == ["Nate"]
     }
+
+    def "friendsStarWithNUsingFilter() returns names beginning N"() {
+        expect:
+            mikePeople.friendsStarWithNUsingFilter() == ["Nate"]
+    }
 }

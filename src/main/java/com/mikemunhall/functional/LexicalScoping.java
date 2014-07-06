@@ -39,6 +39,15 @@ class LexicalScoping {
         return out;
     }
 
+    /*
+        Returns the names that begin with the letter N (using the filter() method)
+    */
+    public List<String> friendsStarWithNUsingFilter() {
+        return friends.stream()
+            .filter(name -> name.startsWith("N"))
+            .collect(Collectors.toList());
+    }
+
     // /*
     //     Illustrating the problem of reuse
     // */

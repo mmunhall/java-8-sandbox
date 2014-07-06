@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class LexicalScoping {
 
@@ -44,6 +45,19 @@ class LexicalScoping {
     */
     public List<String> friendsStarWithNUsingFilter() {
         return friends.stream()
+            .filter(name -> name.startsWith("N"))
+            .collect(Collectors.toList());
+    }
+
+    /*
+        A naive approach at filtering multiple collections by copy/pasting lambda expressions
+    */
+    public List<String> findAllStartingWithNNaiveApproach() {
+        List<String> all = new ArrayList<String>();
+        all.addAll(friends);
+        all.addAll(pals);
+        all.addAll(chums);
+        return all.stream()
             .filter(name -> name.startsWith("N"))
             .collect(Collectors.toList());
     }

@@ -11,16 +11,21 @@ class LexicalScopingSpec extends Specification {
         mikePeople = new LexicalScoping();
         mikePeople.friends = ["Dorrie", "Chris", "Alex", "Nate", "Chuck"]
         mikePeople.pals = ["Bob", "Craig"]
-        mikePeople.chums = ["Scott", "Marc"]
+        mikePeople.chums = ["Scott", "Marc", "Neil"]
     }
 
-    def "friendsStarWithNTheOldWay() returns names beginning N"() {
+    def "friendsStarWithNTheOldWay() returns friends beginning N"() {
         expect:
             mikePeople.friendsStarWithNTheOldWay() == ["Nate"]
     }
 
-    def "friendsStarWithNUsingFilter() returns names beginning N"() {
+    def "friendsStarWithNUsingFilter() returns friends beginning N"() {
         expect:
             mikePeople.friendsStarWithNUsingFilter() == ["Nate"]
+    }
+
+    def "findAllStartingWithNNaiveApproach() returns friends, pals and chums beginning with N"() {
+        expect:
+            mikePeople.findAllStartingWithNNaiveApproach() == ["Nate", "Neil"]
     }
 }

@@ -53,13 +53,24 @@ class LexicalScoping {
         A naive approach at filtering multiple collections by copy/pasting lambda expressions
     */
     public List<String> findAllStartingWithNNaiveApproach() {
-        List<String> all = new ArrayList<String>();
-        all.addAll(friends);
-        all.addAll(pals);
-        all.addAll(chums);
-        return all.stream()
+        List<String> nFriends = friends.stream()
             .filter(name -> name.startsWith("N"))
             .collect(Collectors.toList());
+
+        List<String> nPals = pals.stream()
+            .filter(name -> name.startsWith("N"))
+            .collect(Collectors.toList());
+
+        List<String> nChums = chums.stream()
+            .filter(name -> name.startsWith("N"))
+            .collect(Collectors.toList());
+
+        List<String> all = new ArrayList<String>();
+        all.addAll(nFriends);
+        all.addAll(nPals);
+        all.addAll(nChums);
+
+        return all;
     }
 
     // /*

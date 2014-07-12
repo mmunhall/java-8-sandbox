@@ -167,6 +167,18 @@ class LexicalScoping {
             .collect(Collectors.toList());
     }
 
+    /*
+        Further reduce the clutter by allowing the compiler to infer the types
+    */
+    public List<String> friendsStartsWithNarrowedScopeLambdaConsise(final String letter) {
+        final Function<String, Predicate<String>> startsWithLetter =
+            l -> name -> name.startsWith(l);
+
+        return friends.stream()
+            .filter(startsWithLetter.apply(letter)) // startsWithLetter is locally scoped
+            .collect(Collectors.toList());
+    }
+
     // /*
     //     Illustrating the problem of reuse
     // */

@@ -48,4 +48,14 @@ class LexicalScopingSpec extends Specification {
             mikePeople.friendsStartsWithStaticMethod("B") == ["Bart"]
             mikePeople.friendsStartsWithStaticMethod("X") == []
     }
+
+    def "friendsStartsWithNarrowedScope() returns friends friends beginning with provided letter"() {
+        expect:
+            mikePeople.friendsStartsWithNarrowedScope("D") == ["Dorrie"]
+            mikePeople.friendsStartsWithNarrowedScope("C") == ["Chris", "Chuck"]
+            mikePeople.friendsStartsWithNarrowedScope("A") == ["Alex"]
+            mikePeople.friendsStartsWithNarrowedScope("N") == ["Nate"]
+            mikePeople.friendsStartsWithNarrowedScope("B") == ["Bart"]
+            mikePeople.friendsStartsWithNarrowedScope("X") == []
+    }
 }

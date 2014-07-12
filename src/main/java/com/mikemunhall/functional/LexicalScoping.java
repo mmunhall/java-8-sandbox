@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.function.Function;
 
 class LexicalScoping {
 
@@ -134,7 +135,22 @@ class LexicalScoping {
     */
     public List<String> friendsStartsWithStaticMethod(final String letter) {
         return friends.stream()
-            .filter(checkStartsWith(letter))
+            .filter(checkStartsWith(letter)) // checkStartsWith is a static method
+            .collect(Collectors.toList());
+    }
+
+    /*
+        This version narrows the scope of the Predicate.
+    */
+    public List<String> friendsStartsWithNarrowedScope(final String letter) {
+        final Function<String, Predicate<String>> startsWithLetter =
+            (String l) -> {
+                Predicate<String> checkStarts = (String name) -> name.startsWith(l);
+                return checkStarts;
+            };
+
+        return friends.stream()
+            .filter(startsWithLetter.apply(letter)) // startsWithLetter is locally scoped
             .collect(Collectors.toList());
     }
 

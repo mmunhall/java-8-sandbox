@@ -129,7 +129,10 @@ class LexicalScoping {
         return all;
     }
 
-    public List<String> friendsStartsWith(final String letter) {
+    /*
+        Predicates can be stored in a variable.
+    */
+    public List<String> friendsStartsWithStaticMethod(final String letter) {
         return friends.stream()
             .filter(checkStartsWith(letter))
             .collect(Collectors.toList());

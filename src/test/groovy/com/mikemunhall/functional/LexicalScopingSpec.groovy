@@ -39,13 +39,13 @@ class LexicalScopingSpec extends Specification {
             mikePeople.findFriendsStartingWithNorBNaiveApproach() == ["Nate", "Bart"]
     }
 
-    def "friendsStartsWith() returns friends friends beginning with provided letter"() {
+    def "friendsStartsWithStaticMethod() returns friends friends beginning with provided letter"() {
         expect:
-            mikePeople.friendsStartsWith("D") == ["Dorrie"]
-            mikePeople.friendsStartsWith("C") == ["Chris", "Chuck"]
-            mikePeople.friendsStartsWith("A") == ["Alex"]
-            mikePeople.friendsStartsWith("N") == ["Nate"]
-            mikePeople.friendsStartsWith("B") == ["Bart"]
-            mikePeople.friendsStartsWith("X") == []
+            mikePeople.friendsStartsWithStaticMethod("D") == ["Dorrie"]
+            mikePeople.friendsStartsWithStaticMethod("C") == ["Chris", "Chuck"]
+            mikePeople.friendsStartsWithStaticMethod("A") == ["Alex"]
+            mikePeople.friendsStartsWithStaticMethod("N") == ["Nate"]
+            mikePeople.friendsStartsWithStaticMethod("B") == ["Bart"]
+            mikePeople.friendsStartsWithStaticMethod("X") == []
     }
 }

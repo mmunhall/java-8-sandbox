@@ -9,7 +9,7 @@ class LexicalScopingSpec extends Specification {
 
     def setup() {
         mikePeople = new LexicalScoping();
-        mikePeople.friends = ["Dorrie", "Chris", "Alex", "Nate", "Chuck"]
+        mikePeople.friends = ["Dorrie", "Chris", "Alex", "Nate", "Chuck", "Bart"]
         mikePeople.pals = ["Bob", "Craig"]
         mikePeople.chums = ["Scott", "Marc", "Neil"]
     }
@@ -32,5 +32,10 @@ class LexicalScopingSpec extends Specification {
     def "findAllStartingWithNReusingPredicate() returns friends, pals and chums beginning with N"() {
         expect:
             mikePeople.findAllStartingWithNReusingPredicate() == ["Nate", "Neil"]
+    }
+
+    def "findFriendsStartingWithNorBNaiveApproach() returns friends, pals and chums beginning with N or B"() {
+        expect:
+            mikePeople.findFriendsStartingWithNorBNaiveApproach() == ["Nate", "Bart"]
     }
 }

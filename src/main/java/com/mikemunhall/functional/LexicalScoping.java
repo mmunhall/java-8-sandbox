@@ -103,6 +103,28 @@ class LexicalScoping {
         return all;
     }
 
+    /*
+        Duplication is reintroduced when we decide to return names beginning with different letters.
+    */
+    public List<String> findFriendsStartingWithNorBNaiveApproach() {
+        final Predicate<String> startsWithN = name -> name.startsWith("N");
+        final Predicate<String> startsWithB = name -> name.startsWith("B");
+
+        List<String> nFriends = friends.stream()
+            .filter(startsWithN)
+            .collect(Collectors.toList());
+
+        List<String> bFriends = friends.stream()
+            .filter(startsWithB)
+            .collect(Collectors.toList());
+
+        List<String> all = new ArrayList<String>();
+        all.addAll(nFriends);
+        all.addAll(bFriends);
+
+        return all;
+    }
+
     // /*
     //     Illustrating the problem of reuse
     // */

@@ -14,6 +14,10 @@ class LexicalScoping {
     private List<String> pals;
     private List<String> chums;
 
+    public static Predicate<String> checkStartsWith(final String letter) {
+        return name -> name.startsWith(letter);
+    }
+
     public LexicalScoping() {}
 
     public void setFriends(List<String> friends) {
@@ -123,6 +127,12 @@ class LexicalScoping {
         all.addAll(bFriends);
 
         return all;
+    }
+
+    public List<String> friendsStartsWith(final String letter) {
+        return friends.stream()
+            .filter(checkStartsWith(letter))
+            .collect(Collectors.toList());
     }
 
     // /*

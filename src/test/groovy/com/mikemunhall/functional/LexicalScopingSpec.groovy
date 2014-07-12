@@ -38,4 +38,14 @@ class LexicalScopingSpec extends Specification {
         expect:
             mikePeople.findFriendsStartingWithNorBNaiveApproach() == ["Nate", "Bart"]
     }
+
+    def "friendsStartsWith() returns friends friends beginning with provided letter"() {
+        expect:
+            mikePeople.friendsStartsWith("D") == ["Dorrie"]
+            mikePeople.friendsStartsWith("C") == ["Chris", "Chuck"]
+            mikePeople.friendsStartsWith("A") == ["Alex"]
+            mikePeople.friendsStartsWith("N") == ["Nate"]
+            mikePeople.friendsStartsWith("B") == ["Bart"]
+            mikePeople.friendsStartsWith("X") == []
+    }
 }

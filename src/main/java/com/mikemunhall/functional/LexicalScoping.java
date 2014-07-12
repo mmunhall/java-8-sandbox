@@ -50,7 +50,8 @@ class LexicalScoping {
     }
 
     /*
-        A naive approach at filtering multiple collections by copy/pasting lambda expressions
+        A naive approach at filtering multiple collections by copy/pasting lambda expressions.
+        The lambda expression makes it conscise, but it's duplicated.
     */
     public List<String> findAllStartingWithNNaiveApproach() {
         List<String> nFriends = friends.stream()

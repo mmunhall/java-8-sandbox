@@ -179,38 +179,4 @@ class LexicalScoping {
             .collect(Collectors.toList());
     }
 
-    // /*
-    //     Illustrating the problem of reuse
-    // */
-    // public List<String> allThatStartWithN() {
-    //
-    // }
-    //
-    // /*
-    //     Reuse a lambda by storing it in a variable
-    // */
-    // public List<String> allThatStartWithLambaVariable() {
-    //
-    // }
-    //
-    // /*
-    //     Duplicate lambda expressions
-    // */
-    // public List<String> allThatStartWithNorB() {
-    //
-    // }
-    //
-    // /*
-    //     Use a static predicate for lambda reuse
-    // */
-    // public List<String> checkIfStartsWith() {
-    //
-    // }
-    //
-    // /*
-    //     Use a Function interface to narrow the scope and avoid static variables
-    // */
-    // public List<String> startsWithLetter() {
-    //
-    // }
 }

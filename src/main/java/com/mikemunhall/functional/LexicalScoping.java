@@ -154,6 +154,19 @@ class LexicalScoping {
             .collect(Collectors.toList());
     }
 
+    /*
+        Reduce the clutter: This version replaces the previous narrow-scoped function with one that
+        returns a lambda.
+    */
+    public List<String> friendsStartsWithNarrowedScopeLambda(final String letter) {
+        final Function<String, Predicate<String>> startsWithLetter =
+            (String l) -> (String name) -> name.startsWith(l);
+
+        return friends.stream()
+            .filter(startsWithLetter.apply(letter)) // startsWithLetter is locally scoped
+            .collect(Collectors.toList());
+    }
+
     // /*
     //     Illustrating the problem of reuse
     // */

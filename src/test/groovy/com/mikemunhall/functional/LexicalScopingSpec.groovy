@@ -28,4 +28,9 @@ class LexicalScopingSpec extends Specification {
         expect:
             mikePeople.findAllStartingWithNNaiveApproach() == ["Nate", "Neil"]
     }
+
+    def "findAllStartingWithNReusingPredicate() returns friends, pals and chums beginning with N"() {
+        expect:
+            mikePeople.findAllStartingWithNReusingPredicate() == ["Nate", "Neil"]
+    }
 }

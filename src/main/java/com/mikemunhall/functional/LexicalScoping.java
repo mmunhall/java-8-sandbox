@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -64,6 +65,34 @@ class LexicalScoping {
 
         List<String> nChums = chums.stream()
             .filter(name -> name.startsWith("N"))
+            .collect(Collectors.toList());
+
+        List<String> all = new ArrayList<String>();
+        all.addAll(nFriends);
+        all.addAll(nPals);
+        all.addAll(nChums);
+
+        return all;
+    }
+
+    /*
+        The filter method takes a reference to a Predicate functional interface.
+        Create one to use as a reusable argument to filter(). Only slightly better
+        than the previous method.
+    */
+    public List<String> findAllStartingWithNReusingPredicate() {
+        final Predicate<String> startsWithN = name -> name.startsWith("N");
+
+        List<String> nFriends = friends.stream()
+            .filter(startsWithN)
+            .collect(Collectors.toList());
+
+        List<String> nPals = pals.stream()
+            .filter(startsWithN)
+            .collect(Collectors.toList());
+
+        List<String> nChums = chums.stream()
+            .filter(startsWithN)
             .collect(Collectors.toList());
 
         List<String> all = new ArrayList<String>();
